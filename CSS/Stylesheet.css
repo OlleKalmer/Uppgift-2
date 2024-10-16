@@ -1,0 +1,160 @@
+body {
+    background-color: chocolate ;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:1fr 3fr 1fr;
+    grid-template-rows:1fr 4fr;
+    grid-template-areas: 
+    "titel nav bakgrund"
+    "bild frågorna bakgrund";
+}
+
+.grid>* {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grid {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url(../Bilder/preview2.jpg);
+}
+
+
+nav {
+    grid-area: nav;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+nav li {
+    display: inline;
+    padding-inline: 8%;
+    font-size: 17px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+header {
+    grid-area: titel;
+    color: aliceblue ;
+}
+
+main {
+    grid-area: frågorna;
+    background-color: aliceblue;
+}
+
+#Fråga1:hover {
+    font-size: 20px;
+    color: brown;
+    transition: all .1s;
+}
+
+#Fråga2:hover {
+    font-size: 20px;
+    color: darkorange;
+    transition: all .1s;
+}
+
+#Fråga3:hover {
+    font-size: 20px;
+    color: chartreuse;
+    transition: all .1s;
+}
+
+article {
+    grid-area: bild;
+    img {max-width: 100%;}
+}
+
+footer {
+    display:flex;
+    background-color: cornflowerblue;
+    padding:10px;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1080px){
+    .grid {
+        grid-template-columns: 2fr 2fr 5fr;
+        grid-template-rows: 4fr 1fr;
+        grid-template-areas: 
+        "nav titel frågorna"
+        "bild . frågorna";
+    }
+
+    nav {
+        background-color: aliceblue;
+        height: fit-content;
+    }
+
+    nav li {
+        display: flex;
+
+    }
+
+    header {
+        background-color: aliceblue;
+        color: black;
+        height:fit-content
+    }
+
+    article {
+        transform: rotate(180deg);
+    }
+
+    
+
+}
+
+@media screen and (max-width: 460px){
+    .grid {
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+        "nav"
+        "titel"
+        "frågorna"
+        "tomrum";
+    }
+
+    .grid {
+        background-image: none;
+    }
+
+    header {
+        color:black;
+        background-color: aliceblue;
+    }
+
+    nav {
+        background-color: aliceblue;
+    }
+
+    nav li {
+        padding-inline: 1%;
+    }
+
+    body {
+        background-image: url(../Bilder/höstnatt2.png);
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article {
+        grid-area:tomrum;
+        display: none;
+    }
+}
+
